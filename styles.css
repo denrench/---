@@ -1,0 +1,950 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif; /* Современный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
+    line-height: 1.6;
+    overflow-x: hidden; /* Чтобы скрыть горизонтальную прокрутку от анимаций */
+    /* Добавим едва заметный узор на фон */
+    background-image: radial-gradient(circle, rgba(50, 50, 50, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif; /* Используем Montserrat для единообразия */
+    font-size: 2.2rem; /* Немного уменьшим размер для более современного вида */
+    font-weight: 700;
+    color: #e0f; /* Фиолетовый цвет для заголовков */
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 60px;
+    letter-spacing: 0.5px; /* Небольшое увеличение межбуквенного расстояния */
+}
+
+.highlight {
+    color: #a0f; /* Более светлый фиолетовый для выделения */
+}
+
+.readable-text {
+    font-size: 1rem; /* Немного уменьшим размер основного текста */
+    color: #ddd; /* Сделаем цвет текста немного светлее */
+    margin-bottom: 20px;
+    line-height: 1.7; /* Увеличим межстрочный интервал для лучшей читаемости */
+    font-weight: 300; /* Добавим легкий вес шрифта */
+}
+
+/* Шапка */
+header {
+    background-color: rgba(0, 0, 0, 0.9); /* Немного более насыщенный черный */
+    padding: 15px 0; /* Уменьшим вертикальный отступ для мобильных */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Более заметная тень */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Увеличим размер логотипа */
+    margin-right: 10px;
+    filter: brightness(0) saturate(100%) hue-rotate(270deg); /* Делаем логотип фиолетовым */
+}
+
+.logo span {
+    font-size: 1.6rem; /* Увеличим размер текста логотипа */
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Скрываем на больших экранах */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links ul li {
+    margin-left: 25px;
+}
+
+.nav-links ul li:first-child {
+    margin-left: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+}
+
+.nav-links ul li a:hover {
+    color: #fff;
+}
+
+.nav-links ul li a.active {
+    color: #90f;
+    font-weight: 500;
+}
+
+/* Герой секция */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif; /* Используем Montserrat для основного заголовка */
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+}
+
+.hero .city-name {
+    color: #90f; /* Фиолетовый цвет для названия города */
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #eee;
+    font-weight: 300;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+    margin: 0 10px;
+}
+
+.hero-button.primary {
+    background-color: #90f;
+    color: #fff;
+}
+
+.hero-button.secondary {
+    background-color: transparent;
+    color: #90f;
+    border: 2px solid #90f;
+}
+
+.hero-button.primary:hover {
+    background-color: #708;
+}
+
+.hero-button.secondary:hover {
+    background-color: rgba(153, 0, 255, 0.2);
+    color: #fff;
+}
+
+.hero-animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hero-animation-element {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(144, 0, 255, 0.2); /* Фиолетовые "пузыри" */
+    animation: float 15s infinite alternate, pulse 3s infinite;
+    opacity: 0; /* Изначально прозрачные, появятся с JS */
+}
+
+.hero-animation-element.element-1 { width: 60px; height: 60px; top: 10%; left: 15%; animation-delay: 0s; }
+.hero-animation-element.element-2 { width: 40px; height: 40px; top: 30%; right: 10%; animation-delay: 2s; }
+.hero-animation-element.element-3 { width: 70px; height: 70px; bottom: 15%; left: 25%; animation-delay: 4s; }
+.hero-animation-element.element-4 { width: 30px; height: 30px; bottom: 5%; right: 20%; animation-delay: 6s; }
+.hero-animation-element.element-5 { width: 50px; height: 50px; top: 5%; right: 35%; animation-delay: 8s; }
+.hero-animation-element.element-6 { width: 25px; height: 25px; bottom: 25%; left: 5%; animation-delay: 10s; }
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(50px, -50px) scale(1.2);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Секция преимуществ с градиентом */
+#advantages {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+.advantages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.advantage-item {
+    background: linear-gradient(145deg, #272727, #1a1a1a); /* Добавим легкий градиент */
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.advantage-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.advantage-item i {
+    font-size: 4rem; /* Еще больше иконка */
+    color: #90f;
+    margin-bottom: 15px;
+}
+
+.advantage-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.advantage-item p {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Улучшенная секция преимуществ для бизнеса */
+#business-advantages {
+    padding: 80px 0;
+    background-color: #000; /* Сохраняем темный фон */
+}
+
+.business-advantages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Увеличим минимальную ширину */
+    gap: 30px; /* Увеличим отступ между элементами */
+}
+
+.business-advantage-item {
+    background-color: #1a1a1a; /* Немного светлее основной фон */
+    padding: 30px;
+    border-radius: 8px; /* Сделаем углы более скругленными */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Добавим тень */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.business-advantage-item:hover {
+    transform: translateY(-5px); /* Эффект подъема при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Более выразительная тень при наведении */
+}
+
+.business-advantage-item i {
+    font-size: 2.5rem; /* Увеличим размер иконок */
+    color: #90f;
+    margin-bottom: 15px;
+    display: inline-block; /* Для возможности добавления фона */
+    background-color: rgba(144, 0, 255, 0.1); /* Легкий фиолетовый фон */
+    padding: 15px;
+    border-radius: 50%; /* Круглый фон для иконки */
+}
+
+.business-advantage-item h3 {
+    font-size: 1.5rem; /* Увеличим размер заголовка */
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 600; /* Сделаем заголовок жирнее */
+}
+
+.business-advantage-item p {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.7; /* Увеличим межстрочный интервал */
+}
+
+/* Секция автопарка */
+#fleet-showcase {
+    background-color: #000;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.microbus-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.microbus-image {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.microbus-container:hover .microbus-image {
+    transform: scale(1.05);
+}
+
+.bus-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(144, 0, 255, 0.7);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.microbus-container:hover .bus-text {
+    opacity: 1;
+}
+
+/* Секция "О нас" */
+#about {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+/* Секция зоны покрытия */
+#coverage-area {
+    background-color: #000;
+    padding: 80px 0;
+}
+
+.coverage-map {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.coverage-map ul {
+    list-style: square;
+    padding-left: 30px;
+}
+
+/* Секция маршрутов */
+#routes {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.route-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.route-card:hover {
+    transform: scale(1.02);
+}
+
+.route-card h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.route-label {
+    background-color: #90f;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.route-card p {
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.route-card-soon {
+    opacity: 0.7;
+    border: 1px dashed #777;
+}
+
+/* Секция тарифов */
+#prices {
+    background-color: #000;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.prices-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.prices-list li {
+    font-size: 1.1rem;
+    color: #ddd;
+    padding: 8px 0;
+    border-bottom: 1px dashed #444;
+    width: 350px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prices-list li:last-child {
+    border-bottom: none;
+}
+
+.price {
+    font-weight: bold;
+    color: #90f;
+}
+
+/* Секция инвестиций */
+#invest {
+    padding: 80px 0;
+    background-color: #111;
+    text-align: center;
+}
+
+#invest p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+#invest .hero-button.primary {
+    animation: pulse-button 2s infinite alternate;
+}
+
+@keyframes pulse-button {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Секция отзывов */
+#reviews {
+    padding: 80px 0;
+    background-color: #222;
+}
+
+.reviews-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+}
+
+.review-item {
+    flex: 0 0 auto;
+    width: 400px;
+    margin-right: 20px;
+    padding: 30px;
+    background-color: #333;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.review-item:last-child {
+    margin-right: 0;
+}
+
+.review-text {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.review-text i {
+    color: #90f;
+}
+
+.reviewer {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Секция контактов */
+#contacts {
+    padding: 80px 0;
+    background-color: #000;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    color: #90f;
+    margin-right: 8px;
+}
+
+/* Подвал */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    margin-top: 0;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #90f;
+}
+
+/* Анимация при прокрутке */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для новой секции "Технологии" */
+#technologies {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+.technologies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.technology-item {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.technology-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.technology-item p {
+    color: #ddd;
+}
+
+/* Медиа-запросы (основные) */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Показываем гамбургер на мобильных экранах */
+    }
+
+    .nav-links {
+        display: none; /* Скрываем на больших экранах по умолчанию */
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95); /* Более темный фон мобильного меню */
+        position: absolute;
+        top: 55px; /* Корректировка положения для мобильных */
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 99; /* Чтобы мобильное меню было над контентом */
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Вертикальное расположение ссылок в мобильном меню */
+        align-items: center;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0; /* Уменьшим вертикальные отступы для мобильных */
+        width: 100%; /* Занимаем всю ширину */
+        text-align: center; /* Центрируем текст ссылок */
+    }
+
+    .nav-links ul li a {
+        display: block; /* Ссылка занимает всю ширину пункта меню */
+        text-decoration: none;
+        color: #ddd; /* Сделаем цвет ссылок немного светлее */
+        font-weight: 400; /* Уменьшим толщину шрифта */
+        transition: color 0.3s ease;
+        padding: 12px 15px; /* Увеличим внутренний отступ для удобства касания */
+        border-bottom: 1px solid #333; /* Разделитель между ссылками */
+    }
+
+    .nav-links ul li:last-child a {
+        border-bottom: none; /* Убираем разделитель у последней ссылки */
+    }
+
+    .nav-links ul li a:hover {
+        color: #fff; /* Белый цвет при наведении */
+        background-color: rgba(144, 0, 255, 0.1); /* Легкий фиолетовый фон при наведении */
+    }
+
+    .nav-links ul li a.active {
+        color: #90f; /* Цвет активной ссылки */
+        font-weight: 500;
+    }
+
+    .hero {
+        padding: 100px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Уменьшим размер основного заголовка для мобильных */
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1rem; /* Уменьшим размер параграфа для мобильных */
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons a {
+        padding: 12px 24px; /* Уменьшим отступы кнопок для мобильных */
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+
+    .advantages-list {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+
+    .advantage-item {
+        padding: 20px; /* Уменьшим внутренний отступ для мобильных */
+    }
+
+    .advantage-item i {
+        font-size: 2rem; /* Уменьшим размер иконки для мобильных */
+        margin-bottom: 10px;
+    }
+
+    .advantage-item h3 {
+        font-size: 1.3rem; /* Уменьшим размер заголовка для мобильных */
+        margin-bottom: 6px;
+    }
+
+    .advantage-item p {
+        font-size: 0.9rem; /* Уменьшим размер параграфа для мобильных */
+    }
+
+    #fleet-showcase {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .microbus-container {
+        max-width: 90%; /* Занимаем большую часть ширины на мобильных */
+        margin-bottom: 20px; /* Уменьшим нижний отступ */
+    }
+
+    .bus-text {
+        padding: 10px 15px; /* Уменьшим внутренние отступы для мобильных */
+        font-size: 1.1rem; /* Уменьшим размер текста для мобильных */
+    }
+
+    #about {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    #coverage-area {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .coverage-map {
+        margin-top: 10px; /* Уменьшим верхний отступ */
+        padding: 10px; /* Уменьшим внутренний отступ */
+    }
+
+    .coverage-map ul {
+        padding-left: 20px;
+    }
+
+    #routes {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .routes-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 20px; /* Уменьшим отступ между карточками */
+        margin-top: 20px; /* Уменьшим верхний отступ */
+    }
+
+    .route-card {
+        padding: 20px; /* Уменьшим внутренний отступ для мобильных */
+    }
+
+    .route-card h3 {
+        font-size: 1.2rem; /* Уменьшим размер заголовка для мобильных */
+        margin-bottom: 6px;
+    }
+
+    .route-label {
+        padding: 4px 8px; /* Уменьшим отступы лейбла */
+        font-size: 0.8rem;
+        margin-left: 8px;
+    }
+
+    .route-card p {
+        margin-bottom: 6px;
+        font-size: 0.85rem; /* Уменьшим размер параграфа для мобильных */
+    }
+
+    #prices {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .prices-list {
+        margin-top: 20px; /* Уменьшим верхний отступ */
+    }
+
+    .prices-list li {
+        font-size: 1rem; /* Уменьшим размер текста для мобильных */
+        padding: 6px 0; /* Уменьшим вертикальный отступ */
+        width: 90%; /* Занимаем большую часть ширины на мобильных */
+        max-width: 280px; /* Ограничим максимальную ширину */
+    }
+
+    #invest {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    #invest p {
+        max-width: 90%; /* Занимаем большую часть ширины на мобильных */
+        margin-bottom: 20px; /* Уменьшим нижний отступ */
+        font-size: 0.9rem; /* Уменьшим размер шрифта для мобильных */
+    }
+
+    #invest .hero-button.primary {
+        padding: 10px 20px; /* Уменьшим отступы кнопки для мобильных */
+        font-size: 0.85rem; /* Уменьшим размер шрифта кнопки для мобильных */
+    }
+
+    #reviews {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .reviews-slider {
+        padding-bottom: 10px; /* Уменьшим нижний отступ */
+    }
+
+    .review-item {
+        width: 90%; /* Увеличим ширину отзыва на мобильных */
+        margin-right: 10px; /* Уменьшим правый отступ */
+        padding: 20px; /* Уменьшим внутренний отступ для мобильных */
+    }
+
+    .review-text {
+        font-size: 0.9rem; /* Уменьшим размер шрифта для мобильных */
+    }
+
+    .reviewer {
+        font-size: 0.85rem; /* Уменьшим размер шрифта для мобильных */
+    }
+
+    #contacts {
+        padding: 60px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    .contact-info {
+        margin-top: 20px; /* Уменьшим верхний отступ */
+    }
+
+    .contact-info p {
+        font-size: 0.95rem; /* Уменьшим размер шрифта для мобильных */
+        margin-bottom: 6px;
+    }
+
+    .contact-info i {
+        margin-right: 6px;
+    }
+
+    footer {
+        padding: 20px 0; /* Уменьшим вертикальный отступ для мобильных */
+    }
+
+    footer .container {
+        flex-direction: column; /* Вертикальное расположение элементов подвала на мобильных */
+        align-items: center;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+
+    .footer-links a {
+        margin: 0 10px; /* Уменьшим отступы ссылок подвала */
+        font-size: 0.85rem; /* Уменьшим размер шрифта для мобильных */
+    }
+
+    #technologies {
+        padding: 60px 0;
+    }
+
+    .technologies-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .technology-item {
+        padding: 20px;
+    }
+
+    .technology-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .technology-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Медиа-запросы (дополнительные) */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Скрываем гамбургер на десктопных экранах */
+    }
+
+    .nav-links {
+        display: flex !important; /* Показываем навигацию на десктопных экранах */
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        width: auto;
+    }
+
+    .nav-links ul {
+        flex-direction: row;
+    }
+
+    .nav-links ul li {
+        margin: 0 0 0 25px;
+    }
+
+    .nav-links ul li a {
+        display: inline-block;
+        border-bottom: none;
+    }
+}
